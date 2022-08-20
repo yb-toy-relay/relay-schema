@@ -1,0 +1,72 @@
+{
+    "name": "DeviceDetail",
+    "namespace": "one.appscale.relayschema.domain",
+    "type": "record",
+    "fields" : [
+         {
+            "name": "country",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "countrySubdivision",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "city",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "postalCode",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "language",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "deviceName",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "deviceType",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "osName",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "osVersion",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "attStatus",
+            "type": ["null", "int"],
+            "default": null
+         },
+         {
+            "name": "connectionType",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "isp",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "ipAddress",
+            "type": ["null", "string"],
+            "default": null
+         }
+    ]
+}

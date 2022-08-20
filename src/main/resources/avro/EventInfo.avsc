@@ -1,0 +1,27 @@
+{
+    "name": "EventInfo",
+    "namespace": "one.appscale.relayschema.domain",
+    "type": "record",
+    "fields" : [
+         {
+            "name": "event",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "eventName",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "currency",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "revenue",
+            "type": ["null", "float"],
+            "default": null
+         }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "name": "AttributionInfo",
+    "namespace": "one.appscale.relayschema.domain",
+    "type": "record",
+    "fields" : [
+         {
+            "name": "impressionAttributionWindow",
+            "type": ["null", "int"],
+            "default": null
+         },
+         {
+            "name": "clickAttributionWindow",
+            "type": ["null", "int"],
+            "default": null
+         },
+         {
+            "name": "probmatchingAttributionWindow",
+            "type": ["null", "int"],
+            "default": null
+         }
+    ]
+}

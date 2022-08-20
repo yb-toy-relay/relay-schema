@@ -1,0 +1,27 @@
+{
+    "name": "ChannelInfo",
+    "namespace": "one.appscale.relayschema.domain",
+    "type": "record",
+    "fields" : [
+         {
+            "name": "networkName",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "campaignName",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "adgroupName",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "creativeName",
+            "type": ["null", "string"],
+            "default": null
+         }
+    ]
+}

@@ -1,0 +1,47 @@
+{
+    "name": "EngagementInfo",
+    "namespace": "one.appscale.relayschema.domain",
+    "type": "record",
+    "fields" : [
+         {
+            "name": "impressionTime",
+            "type": ["null", "long"],
+            "default": null
+         },
+         {
+            "name": "clickTime",
+            "type": ["null", "long"],
+            "default": null
+         },
+         {
+            "name": "installTime",
+            "type": ["null", "long"],
+            "default": null
+         },
+         {
+            "name": "installBeginTime",
+            "type": ["null", "long"],
+            "default": null
+         },
+         {
+            "name": "installFinishTime",
+            "type": ["null", "long"],
+            "default": null
+         },
+         {
+            "name": "conversionDuration",
+            "type": ["null", "long"],
+            "default": null
+         },
+         {
+            "name": "referrer",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "matchType",
+            "type": ["null", "string"],
+            "default": null
+         }
+    ]
+}

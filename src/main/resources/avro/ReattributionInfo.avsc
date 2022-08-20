@@ -1,0 +1,32 @@
+{
+    "name": "ReattributionInfo",
+    "namespace": "one.appscale.relayschema.domain",
+    "type": "record",
+    "fields" : [
+         {
+            "name": "isReattributed",
+            "type": ["null", "int"],
+            "default": null
+         },
+         {
+            "name": "reattributionTime",
+            "type": ["null", "long"],
+            "default": null
+         },
+         {
+            "name": "reattributionAttributionWindow",
+            "type": ["null", "int"],
+            "default": null
+         },
+         {
+            "name": "inactiveUserDefinition",
+            "type": ["null", "int"],
+            "default": null
+         },
+         {
+            "name": "lastTrackerName",
+            "type": ["null", "string"],
+            "default": null
+         }
+    ]
+}

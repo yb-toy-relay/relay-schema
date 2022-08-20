@@ -1,0 +1,52 @@
+{
+    "name": "Install",
+    "namespace": "one.appscale.relayschema.domain.install",
+    "type": "record",
+    "fields" : [
+         {
+            "name": "activityKey",
+            "type": ["null", "one.appscale.relayschema.domain.ActivityKey"],
+            "default": null
+         },
+         {
+            "name": "appInfo",
+            "type": ["null", "one.appscale.relayschema.domain.AppInfo"],
+            "default": null
+         },
+         {
+            "name": "channelInfo",
+            "type": ["null", "one.appscale.relayschema.domain.ChannelInfo"],
+            "default": null
+         },
+         {
+            "name": "attributionInfo",
+            "type": ["null", "one.appscale.relayschema.domain.AttributionInfo"],
+            "default": null
+         },
+         {
+            "name": "engagementInfo",
+            "type": ["null", "one.appscale.relayschema.domain.EngagementInfo"],
+            "default": null
+         },
+         {
+            "name": "deviceIdInfo",
+            "type": ["null", "one.appscale.relayschema.domain.DeviceIdInfo"],
+            "default": null
+         },
+         {
+            "name": "deviceDetail",
+            "type": ["null", "one.appscale.relayschema.domain.DeviceDetail"],
+            "default": null
+         },
+         {
+            "name": "environmentInfo",
+            "type": ["null", "one.appscale.relayschema.domain.EnvironmentInfo"],
+            "default": null
+         },
+         {
+            "name": "facebookReferrerInfo",
+            "type": ["null", "one.appscale.relayschema.domain.FacebookReferrerInfo"],
+            "default": null
+         }
+    ]
+}

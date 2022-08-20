@@ -1,0 +1,17 @@
+{
+    "name": "ActivityKey",
+    "namespace": "one.appscale.relayschema.domain",
+    "type": "record",
+    "fields" : [
+         {
+            "name": "createdAt",
+            "type": ["null", "long"],
+            "default": null
+         },
+         {
+            "name": "activityKind",
+            "type": ["null", "string"],
+            "default": null
+         }
+    ]
+}

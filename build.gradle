@@ -1,0 +1,119 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id "com.github.davidmc24.gradle.plugin.avro" version "1.0.0"
+    id "com.gorylenko.gradle-git-properties" version "2.2.4"
+    id 'org.ajoberstar.grgit' version '4.1.0'
+}
+
+group 'one.appscale.relayschema'
+version '0.0.1'
+sourceCompatibility = JavaVersion.VERSION_11
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.apache.avro:avro:1.11.0"
+}
+
+ext {
+    curBranchName = grgit.branch.current().name
+    releasingBranches = [ 'master', 'release/*', 'release']                // release is allowed only in these branches
+    knownBranches = ['master', 'release/*', 'release', 'dev', 'develop']   // branchName will not be included in Snapshot version name
+}
+
+ext.checkReleaseAllowedBranch = {
+    def matchedBranch = findMatchedBranchName releasingBranches
+
+    if (matchedBranch == null) {
+        throw new StopExecutionException("[Error] You can't release this artifact on the current branch")
+    }
+}
+
+ext.generateSnapshotVersionWithBranchName = {
+    def matchedBranch = findMatchedBranchName knownBranches
+
+    if (matchedBranch == null) { // need to use branch name in version number
+        return version + '-' + curBranchName.toLowerCase().replace('/', '-') + '-SNAPSHOT'
+    } else {
+        return version + '-SNAPSHOT'
+    }
+}
+
+ext.isPrefixName = { branchName ->
+    branchName.endsWith('/*') ? true : false
+}
+
+ext.findMatchedBranchName = { branches ->
+    return branches.find {
+        def isPrefix = isPrefixName(it)
+
+        if (!isPrefix && curBranchName == it) {
+            return true
+        } else if (isPrefix && curBranchName.startsWith(it.substring(0, it.length() - 1))) {
+            return true
+        }
+        return false
+    }
+}
+
+task release(dependsOn: 'publish') {
+    doLast {
+        println "Published release version = $version"
+    }
+}
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.allSource
+}
+
+task avscJar(type: Jar) {
+    from('src/main/resources/avro') {
+        include '**/*.avsc'
+    }
+}
+
+generateAvroJava {
+    source 'src/main/resources/avro'
+}
+
+publishing {
+    publications {
+        javaAndAvscPublish(MavenPublication) {
+            from components.java // basic artifact for classes
+
+            artifact sourceJar { // standard source artifact
+                classifier "sources"
+            }
+            artifact avscJar {   // avsc schema file artifact
+                classifier "avsc"
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            credentials {
+                username appscaleRepsyUsername
+                password appscaleRepsyPassword
+            }
+            url 'https://repo.repsy.io/mvn/appscale/libs/'
+        }
+    }
+}
+
+gradle.taskGraph.whenReady { taskGraph ->
+    if (!taskGraph.hasTask(release)) {
+        version = generateSnapshotVersionWithBranchName()
+        publishing.repositories.maven.url = 'https://repo.repsy.io/mvn/appscale/libs/'
+    } else {
+        checkReleaseAllowedBranch()
+    }
+}
+
+avro {
+    fieldVisibility = "PRIVATE"
+    createSetters = false
+}

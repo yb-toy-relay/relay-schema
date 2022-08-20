@@ -1,0 +1,27 @@
+{
+    "name": "AppInfo",
+    "namespace": "one.appscale.relayschema.domain",
+    "type": "record",
+    "fields" : [
+         {
+            "name": "appToken",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "appId",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "appName",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "appVersion",
+            "type": ["null", "string"],
+            "default": null
+         }
+    ]
+}

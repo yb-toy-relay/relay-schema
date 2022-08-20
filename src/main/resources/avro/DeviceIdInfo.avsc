@@ -1,0 +1,27 @@
+{
+    "name": "DeviceIdInfo",
+    "namespace": "one.appscale.relayschema.domain",
+    "type": "record",
+    "fields" : [
+         {
+            "name": "adjustId",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "gpsAdid",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "idfa",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "idfv",
+            "type": ["null", "string"],
+            "default": null
+         }
+    ]
+}

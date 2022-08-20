@@ -1,0 +1,32 @@
+{
+    "name": "FacebookReferrerInfo",
+    "namespace": "one.appscale.relayschema.domain",
+    "type": "record",
+    "fields" : [
+         {
+            "name": "fbRefPublisherPlatform",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "fbRefAdObjective",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "fbRefCampaignGroup",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "fbRefCampaign",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "fbRefAdgroup",
+            "type": ["null", "string"],
+            "default": null
+         }
+    ]
+}

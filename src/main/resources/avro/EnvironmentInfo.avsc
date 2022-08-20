@@ -1,0 +1,17 @@
+{
+    "name": "EnvironmentInfo",
+    "namespace": "one.appscale.relayschema.domain",
+    "type": "record",
+    "fields" : [
+         {
+            "name": "environment",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "sdkVersion",
+            "type": ["null", "string"],
+            "default": null
+         }
+    ]
+}
