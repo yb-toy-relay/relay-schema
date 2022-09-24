@@ -1,0 +1,42 @@
+{
+    "name": "ActivityLogCsvRequest",
+    "namespace": "one.appscale.relayschema.request.csv",
+    "type": "record",
+    "fields" : [
+         {
+            "name": "activityKind",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "apiKey",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "appToken",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "startDate",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "endDate",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "zoneId",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "email",
+            "type": ["null", "string"],
+            "default": null
+         }
+    ]
+}
