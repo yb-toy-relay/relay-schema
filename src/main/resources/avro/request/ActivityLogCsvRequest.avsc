@@ -37,6 +37,11 @@
             "name": "email",
             "type": ["null", "string"],
             "default": null
+         },
+         {
+            "name": "traceId",
+            "type": ["null", "string"],
+            "default": null
          }
     ]
 }
