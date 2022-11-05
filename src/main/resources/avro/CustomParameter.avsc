@@ -1,0 +1,32 @@
+{
+    "name": "CustomParameter",
+    "namespace": "one.appscale.relayschema.domain",
+    "type": "record",
+    "fields" : [
+         {
+            "name": "adjCustom1",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "adjCustom2",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "adjCustom3",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "adjCustom4",
+            "type": ["null", "string"],
+            "default": null
+         },
+         {
+            "name": "adjCustom5",
+            "type": ["null", "string"],
+            "default": null
+         }
+    ]
+}
